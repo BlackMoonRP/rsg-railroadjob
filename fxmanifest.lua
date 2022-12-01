@@ -7,7 +7,6 @@ description 'rsg-railroadjob'
 
 client_scripts {
 	'client/client.lua',
-	'client/npc.lua',
 	'config.lua',
 }
 
