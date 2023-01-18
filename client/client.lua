@@ -1,7 +1,7 @@
-local QRCore = exports['qr-core']:GetCoreObject()
+local RSGCore = exports['rsg-core']:GetCoreObject()
 
 Citizen.CreateThread(function()
-	exports['qr-core']:createPrompt('valentine-station', vector3(-162.8994, 638.43988, 114.03205), QRCore.Shared.Keybinds['J'], 'Railroad Menu', {
+	exports['rsg-core']:createPrompt('valentine-station', vector3(-162.8994, 638.43988, 114.03205), RSGCore.Shared.Keybinds['J'], 'Railroad Menu', {
 		type = 'client',
 		event = 'rsg-railroadjob:client:menu',
 		args = {}
@@ -10,7 +10,7 @@ end)
 
 -- railroad menu
 RegisterNetEvent('rsg-railroadjob:client:menu', function(data)
-    exports['qr-menu']:openMenu({
+    exports['rsg-menu']:openMenu({
         {
             header = "| Railroad Menu |",
             isMenuHeader = true,
@@ -28,7 +28,7 @@ RegisterNetEvent('rsg-railroadjob:client:menu', function(data)
             header = "Close Menu",
             txt = '',
             params = {
-                event = 'qr-menu:closeMenu',
+                event = 'rsg-menu:closeMenu',
             }
         },
     })
@@ -53,7 +53,7 @@ local trainrunning = false
 
 RegisterNetEvent('rsg-railroadjob:client:spawntrain')
 AddEventHandler('rsg-railroadjob:client:spawntrain', function(data)
-	PlayerJob = QRCore.Functions.GetPlayerData().job.name
+	PlayerJob = RSGCore.Functions.GetPlayerData().job.name
 	if PlayerJob == 'railroad' then
 		if trainspawned == false then
 			SetRandomTrains(false)
@@ -87,10 +87,10 @@ AddEventHandler('rsg-railroadjob:client:spawntrain', function(data)
 			trainspawned = true
 			trainrunning = true
 		else
-			QRCore.Functions.Notify('train is already out, check map!', 'error')
+			RSGCore.Functions.Notify('train is already out, check map!', 'error')
 		end
 	else
-		QRCore.Functions.Notify('you do not work for the railroad!', 'error')
+		RSGCore.Functions.Notify('you do not work for the railroad!', 'error')
 	end
 end)
 
@@ -126,19 +126,19 @@ end)
 
 -- delete train
 RegisterCommand('deletetrain', function()
-	PlayerJob = QRCore.Functions.GetPlayerData().job.name
+	PlayerJob = RSGCore.Functions.GetPlayerData().job.name
 	if PlayerJob == 'railroad' then
 		DeleteEntity(CURRENT_TRAIN)
 		trainspawned = false
 		trainrunning = false
 	else
-		QRCore.Functions.Notify('you do not work for the railroad!', 'error')
+		RSGCore.Functions.Notify('you do not work for the railroad!', 'error')
 	end
 end)
 
 -- reset train
 RegisterCommand('resettrain', function()
-	PlayerJob = QRCore.Functions.GetPlayerData().job.name
+	PlayerJob = RSGCore.Functions.GetPlayerData().job.name
 	if PlayerJob == 'railroad' then
 		DeleteEntity(CURRENT_TRAIN)
 		trainspawned = false
@@ -149,6 +149,6 @@ RegisterCommand('resettrain', function()
 		Wait(1000)
 		DoScreenFadeIn(500)
 	else
-		QRCore.Functions.Notify('you do not work for the railroad!', 'error')
+		RSGCore.Functions.Notify('you do not work for the railroad!', 'error')
 	end
 end)
