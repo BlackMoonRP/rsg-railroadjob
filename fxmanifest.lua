@@ -11,6 +11,6 @@ client_scripts {
 }
 
 dependencies {
-    'qr-core',
-	'qr-menu',
+    'rsg-core',
+	'rsg-menu',
 }
