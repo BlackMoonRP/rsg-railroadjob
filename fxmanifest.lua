@@ -5,19 +5,23 @@ game 'rdr3'
 author 'RexShack#3041'
 description 'rsg-railroadjob'
 
-shared_scripts {
-	'config.lua',
+shared_scripts
+{
+    'config.lua'
 }
 
-client_scripts {
-	'client/*lua',
+client_scripts
+{
+    'client/client.lua'
 }
 
---server_scripts {
---	 'server/*lua'
---}
+server_scripts
+{
+    'server/server.lua'
+}
 
-dependencies {
+dependencies
+{
     'rsg-core',
-	'rsg-menu',
+    'bm-menu'
 }
