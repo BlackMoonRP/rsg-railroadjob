@@ -20,4 +20,5 @@ server_scripts {
 dependencies {
     'rsg-core',
     'rsg-menu',
+    'rsg-npcs'
 }
