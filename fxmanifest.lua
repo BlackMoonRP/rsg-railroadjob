@@ -23,5 +23,5 @@ server_scripts
 dependencies
 {
     'rsg-core',
-    'bm-menu'
+    'rsg-menu'
 }
