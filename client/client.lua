@@ -28,10 +28,10 @@ RegisterNetEvent('rsg-railroadjob:client:companyone', function(data)
         header = 'Close Menu',
         txt = '',
         params = {
-            event = 'bm-menu:closeMenu'
+            event = 'rsg-menu:closeMenu'
         }
     }
-    exports['bm-menu']:openMenu(railroadMenu)
+    exports['rsg-menu']:openMenu(railroadMenu)
 end)
 RegisterNetEvent('rsg-railroadjob:client:companytwo', function(data)
     local railroadMenu = {{
@@ -55,10 +55,10 @@ RegisterNetEvent('rsg-railroadjob:client:companytwo', function(data)
         header = 'Close Menu',
         txt = '',
         params = {
-            event = 'bm-menu:closeMenu'
+            event = 'rsg-menu:closeMenu'
         }
     }
-    exports['bm-menu']:openMenu(railroadMenu)
+    exports['rsg-menu']:openMenu(railroadMenu)
 end)
 RegisterNetEvent('rsg-railroadjob:client:companythree', function(data)
     local railroadMenu = {{
@@ -82,10 +82,10 @@ RegisterNetEvent('rsg-railroadjob:client:companythree', function(data)
         header = 'Close Menu',
         txt = '',
         params = {
-            event = 'bm-menu:closeMenu'
+            event = 'rsg-menu:closeMenu'
         }
     }
-    exports['bm-menu']:openMenu(railroadMenu)
+    exports['rsg-menu']:openMenu(railroadMenu)
 end)
 
 RegisterNetEvent('rsg-railroadjob:client:remove', function(data)
@@ -103,7 +103,7 @@ end)
 -- railroad menu
 RegisterNetEvent('rsg-railroadjob:client:menu', function(data)
     if not trainspawned then
-        exports['bm-menu']:openMenu({
+        exports['rsg-menu']:openMenu({
             {
                 header = '| Railroad Menu |',
                 txt = 'Select a Company',
@@ -133,12 +133,12 @@ RegisterNetEvent('rsg-railroadjob:client:menu', function(data)
                 header = 'Close Menu',
                 txt = '',
                 params = {
-                    event = 'bm-menu:closeMenu',
+                    event = 'rsg-menu:closeMenu',
                 }
             },
         })
     else
-        exports['bm-menu']:openMenu({
+        exports['rsg-menu']:openMenu({
             {
                 header = '| Railroad Menu |',
                 txt = 'Select a Company',
@@ -154,7 +154,7 @@ RegisterNetEvent('rsg-railroadjob:client:menu', function(data)
                 header = 'Close Menu',
                 txt = '',
                 params = {
-                    event = 'bm-menu:closeMenu',
+                    event = 'rsg-menu:closeMenu',
                 }
             },
         })
