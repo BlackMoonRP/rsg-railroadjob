@@ -3,6 +3,10 @@
 - youtube : https://www.youtube.com/channel/UCikEgGfXO-HCPxV5rYHEVbA
 - github : https://github.com/Rexshack-RedM
 
+# Limitations
+- be aware due to OneSync and NPC culling a player needs to remain on the train if you are using the NPC to drive
+- failure to stay on the train the NPC will despawn and the train will stop
+
 # Dependancies
 - rsg-core
 - rsg-menu
