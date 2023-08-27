@@ -89,7 +89,12 @@ RegisterNetEvent('rsg-railroadjob:client:companythree', function(data)
 end)
 
 RegisterNetEvent('rsg-railroadjob:client:remove', function(data)
-    DeleteEntity(CURRENT_TRAIN)
+    if DoesEntityExist(CURRENT_TRAIN) then
+        SetEntityAsNoLongerNeeded(CURRENT_TRAIN)
+        NetworkRequestControlOfEntity(CURRENT_TRAIN)
+        SetEntityAsMissionEntity(CURRENT_TRAIN, true, true)
+        DeleteVehicle(CURRENT_TRAIN)
+    end
 
     trainspawned = false
     trainrunning = false
@@ -240,7 +245,12 @@ end)
 -- if Config.debug then
     RegisterCommand('deletetrain', function()
         -- if RSGCore.Functions.GetPlayerData().job.name == 'railroad' then
-            DeleteEntity(CURRENT_TRAIN)
+        if DoesEntityExist(CURRENT_TRAIN) then
+            SetEntityAsNoLongerNeeded(CURRENT_TRAIN)
+            NetworkRequestControlOfEntity(CURRENT_TRAIN)
+            SetEntityAsMissionEntity(CURRENT_TRAIN, true, true)
+            DeleteVehicle(CURRENT_TRAIN)
+        end
 
             trainspawned = false
             trainrunning = false
