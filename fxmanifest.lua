@@ -4,6 +4,7 @@ game 'rdr3'
 
 author 'RexShack#3041'
 description 'rsg-railroadjob'
+version '1.0.0'
 
 shared_scripts {
     'config.lua',
